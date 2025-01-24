@@ -1,1 +1,166 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+
+        header a:hover {
+            color: #0078d4;
+        }
+
+        .container {
+            padding: 6rem 2rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #333;
+            display: inline-block;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .resume {
+            margin-top: 2rem;
+        }
+
+        .resume a {
+            display: inline-block;
+            background-color: #0078d4;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .resume a:hover {
+            background-color: #005bb5;
+        }
+
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .hobby {
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            flex: 1 1 calc(33% - 1rem);
+        }
+
+        .hobby:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">My Portfolio</div>
+        <nav>
+            <a href="#gallery">Gallery</a>
+            <a href="#resume">Resume</a>
+            <a href="#hobbies">Hobbies</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="gallery" class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/300" alt="Gallery Image 1">
+                <img src="https://via.placeholder.com/300" alt="Gallery Image 2">
+                <img src="https://via.placeholder.com/300" alt="Gallery Image 3">
+                <img src="https://via.placeholder.com/300" alt="Gallery Image 4">
+            </div>
+        </section>
+
+        <section id="resume" class="container">
+            <h2 class="section-title">Resume</h2>
+            <div class="resume">
+                <a href="resume.pdf" download>Download My Resume</a>
+            </div>
+        </section>
+
+        <section id="hobbies" class="container">
+            <h2 class="section-title">Hobbies</h2>
+            <div class="hobbies">
+                <div class="hobby">Photography</div>
+                <div class="hobby">Traveling</div>
+                <div class="hobby">Reading</div>
+                <div class="hobby">Cooking</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
